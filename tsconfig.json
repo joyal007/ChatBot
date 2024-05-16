@@ -3,11 +3,16 @@
     // ...
     "jsx": "react-jsx",
     "baseUrl": ".",
+    "esModuleInterop": true,
+    "skipLibCheck": true, // Optional: Skips type checking of declaration files
+    "strict": true, // Optional: Enables all strict type-checking options
+    "resolveJsonModule": true,
     "paths": {
       "@/*": [
         "./src/*"
       ]
-    }
+    },
+    "outDir": "./dist",
     // ...
   }
 }

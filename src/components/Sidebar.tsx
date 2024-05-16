@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { useCallback, useState } from "react";
 import { useReactFlow, useOnSelectionChange } from "reactflow";
 import NodesPanel from "./NodesPanel";

@@ -1,13 +1,24 @@
 import { useCallback, useState } from "react";
 
-function DraggableNode({ type, label, Icon }) {
+function DraggableNode({
+  type,
+  label,
+  Icon,
+}: {
+  type: string;
+  label: string;
+  Icon: React.FC<React.SVGProps<SVGSVGElement>>;
+}) {
   const [dragging, setDragging] = useState(false);
 
   const handleDragStart = useCallback(
-    (e) => {
+    (e: React.DragEvent<HTMLDivElement>) => {
       setDragging(true);
-      e.dataTransfer.setData("type", e.target.getAttribute("data-type"));
-      e.dataTransfer.setData("label", e.target.getAttribute("data-label"));
+
+      const target = e.target as HTMLDivElement;
+
+      e.dataTransfer.setData("type", target.getAttribute("data-type") || "");
+      e.dataTransfer.setData("label", target.getAttribute("data-label") || "");
     },
     [setDragging]
   );

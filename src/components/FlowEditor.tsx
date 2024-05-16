@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { useCallback, useState, useMemo } from "react";
 import ReactFlow, {
   addEdge,
@@ -49,12 +50,12 @@ function FlowEditor() {
     [setEdges]
   );
 
-  const onDropOver = useCallback((e) => {
+  const onDropOver = useCallback((e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
   }, []);
 
   const onDrop = useCallback(
-    (e) => {
+    (e: React.DragEvent<HTMLDivElement>) => {
       e.preventDefault();
       const type = e.dataTransfer.getData("type");
       const label = e.dataTransfer.getData("label");

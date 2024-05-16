@@ -1,7 +1,13 @@
 import { Handle, Position } from "reactflow";
 import { ChatBubbleOvalLeftEllipsisIcon } from "@heroicons/react/20/solid";
 
-function TextMessage({ data, selected }) {
+function TextMessage({
+  data,
+  selected,
+}: {
+  data: { value: string };
+  selected: boolean;
+}) {
   return (
     <div
       className={`${
